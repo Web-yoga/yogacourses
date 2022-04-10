@@ -1,7 +1,12 @@
 const ReduserData = (state, action) => {
-switch (action.type){  //action.type - где проводить изменения ; state - какие изменения
+switch (action.type){
+	case "FETCH_NEWS":
+		return{
+			...state,
+			news: action.payload
+		}
 	default:
-	return state
+	return state;
 }
 }
 export default ReduserData;

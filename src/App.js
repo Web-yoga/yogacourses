@@ -1,7 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useReducer } from 'react';
 import './App.css';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import General from './routes/General/General';
 import Courses from './routes/Courses/Courses';
 import Shop from './routes/Shop/Shop';
@@ -12,7 +11,7 @@ import StateData from './context/Data/SateData';
 
 
 function App() {
-	const [stateData, dispatchData] = React.useReducer(ReduserData, StateData)
+	const [stateData, dispatchData] = useReducer(ReduserData, StateData)
   return (
 	  <div>
 		  <ContextData.Provider value={{stateData, dispatchData}}>
